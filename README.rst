@@ -40,6 +40,20 @@ Basic Operations
     # OR
     gv.delete('max_retries')
 
+Safe Access and Explicit Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can use ``get()`` to safely retrieve variables with a default value, and ``set()`` to explictly store them.
+
+.. code-block:: python
+
+    # Get with default value (returns None if not found, or specified default)
+    api_key = gv.get('api_key')
+    timeout = gv.get('timeout', 30)
+
+    # Explicit set (equivalent to gv['key'] = value)
+    gv.set('status', 'active')
+
 Filtering and Persistence
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
